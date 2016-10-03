@@ -12,7 +12,7 @@ body {
 }
 
 .container {
-	max-width: 1160px;
+	max-width: 1180px;
 	margin: 0 auto;
 }
 
@@ -20,30 +20,40 @@ header {
 	text-align: center;
 }
 
-h1, h2 {
+h1, h2, h4 {
+	font-family: 'Press Start 2P', sans-serif;
 	text-shadow: 4px 4px 0 #000;
 	transform: scaleY(1.4);
 }
 
 h1 {
 	margin: 0;
-	font: 64px 'Press Start 2P', sans-serif;
+	font-size: 64px;
 }
 
-h1::before, h1::after {
-	content: ' - ';
+@media only screen and (min-width: 1180px) {
+	/* because the dashes look weird when wrapped */
+	h1::before, h1::after {
+		content: ' - ';
+	}
 }
 
 h2 {
 	margin: 40px 0 0;
 	color: #46a4e8;
-	font: 32px 'Press Start 2P', sans-serif;
+	font-size: 32px;
 }
 
 h3 {
 	margin: 0 0 20px;
 	font-size: 36px;
 	text-transform: uppercase;
+}
+
+h4 {
+	margin: 0 0 30px;
+	text-align: center;
+	font-size: 36px;
 }
 
 .mushroom {
@@ -113,19 +123,24 @@ form {
 	max-width: 600px;
 	margin: 40px auto;
 	padding: 40px 90px;
-	border: 4px dashed #37474f;
-	border-radius: 20px;
+	border: 4px dashed #fff;
+	background-color: #37474f;
 }
 
-.input-row {
+.input-row, .checkbox-row {
 	position: relative;
 	margin-bottom: 16px;
 }
 
-.input-row::after {
+.input-row::after, .checkbox-row::after {
 	content: '';
 	display: block;
 	clear: both;
+}
+
+input:focus {
+	/* focus cue given by other styles */
+	outline: none;
 }
 
 .input-row input {
@@ -133,20 +148,52 @@ form {
 	margin: 4px 0 0;
 	padding: 8px 12px;
 	border: none;
-	border-radius: 10px;
+	border-radius: 4px;
 	font-size: inherit;
 	font-family: inherit;
 	appearance: none;
-}
-
-.input-row input:focus {
-	outline: none;
 }
 
 .input-row.focused::before {
 	content: url(images/cursor.png);
 	position: absolute;
 	top: 42px;
+	left: -76px;
+}
+
+.checkbox-row input {
+	position: absolute;
+	left: -9999px;
+}
+
+.checkbox-row input + label {
+	display: block;
+	clear: left;
+	float: left;
+	position: relative;
+	margin: 6px 0 0 20px;
+	cursor: pointer;
+}
+
+.checkbox-row input + label::before {
+	content: '';
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	margin-right: 10px;
+	background-color: #fff;
+	vertical-align: -2px;
+}
+
+.checkbox-row input:checked + label::before {
+	background-color: #46a4e8;
+	border: 4px solid #fff;
+}
+
+.checkbox-row input:focus + label::after {
+	content: url(images/cursor.png);
+	position: absolute;
+	top: -2px;
 	left: -76px;
 }
 
@@ -158,15 +205,16 @@ form {
 .submit-row input {
 	width: 300px;
 	padding: 10px 40px;
-	border: 4px solid #fff;
+	border: none;
 	color: #fff;
 	background-color: #46a4e8;
 	font-size: 32px;
 	font-family: inherit;
 	cursor: pointer;
+	box-shadow: 4px 4px 0 #000;
 }
 
 .submit-row input:hover, .submit-row input:focus {
-	background-color: #2f6e9c;
-	outline: none;
+	padding: 6px 36px;
+	border: 4px solid #fff;
 }
