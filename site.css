@@ -121,11 +121,52 @@ p {
 }
 
 form {
+	position: relative;
 	max-width: 600px;
 	margin: 40px auto;
 	padding: 40px 90px;
-	border: 4px dashed #fff;
+	border: 2px solid rgba(255, 255, 255, 0.25);
 	background-color: #37474f;
+	box-shadow: 4px 4px 0 #000;
+}
+
+.bolt {
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	background-color: #fff;
+	transform: rotate(45deg);
+}
+
+.bolt::before {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 4px;
+	margin: 0 10px;
+	height: 24px;
+	background-color: #37474f;
+}
+
+.bolt-top-left {
+	top: 20px;
+	left: 20px;
+}
+
+.bolt-top-right {
+	top: 20px;
+	right: 20px;
+}
+
+.bolt-bottom-left {
+	bottom: 20px;
+	left: 20px;
+}
+
+.bolt-bottom-right {
+	bottom: 20px;
+	right: 20px;
 }
 
 .input-row, .checkbox-row {
@@ -213,6 +254,7 @@ input:focus {
 	font-family: inherit;
 	cursor: pointer;
 	box-shadow: 4px 4px 0 #000;
+	text-transform: uppercase;
 }
 
 .submit-row input:hover, .submit-row input:focus {
