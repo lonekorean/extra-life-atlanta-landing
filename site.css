@@ -4,16 +4,20 @@
 	box-sizing: border-box;
 }
 
+html {
+	font: 20px/1.4 'Source Sans Pro', sans-serif;
+}
+
 body {
-	margin: 80px 0;
+	margin: 40px 0;
 	color: #fff;
 	background-color: #37474f;
-	font: 24px/1.4 'Source Sans Pro', sans-serif;
 }
 
 .container {
-	max-width: 1180px;
+	max-width: 920px;
 	margin: 0 auto;
+	padding: 20px;
 }
 
 header {
@@ -22,16 +26,16 @@ header {
 
 h1, h2, h4 {
 	font-family: 'Press Start 2P', sans-serif;
-	text-shadow: 4px 4px 0 #000;
+	text-shadow: 3px 3px 0 #000;
 	transform: scaleY(1.4);
 }
 
 h1 {
 	margin: 0;
-	font-size: 64px;
+	font-size: 48px;
 }
 
-@media only screen and (min-width: 1180px) {
+@media only screen and (min-width: 920px) {
 	/* because the dashes look weird when wrapped */
 	h1::before, h1::after {
 		content: ' - ';
@@ -39,28 +43,28 @@ h1 {
 }
 
 h2 {
-	margin: 40px 0 0;
+	margin: 30px 0 0;
 	color: #46a4e8;
-	font-size: 32px;
+	font-size: 28px;
 }
 
 h3 {
 	margin: 0 0 20px;
-	font-size: 36px;
+	font-size: 30px;
 	text-transform: uppercase;
 }
 
 h4 {
 	margin: 0 0 30px;
 	text-align: center;
-	font-size: 36px;
+	font-size: 28px;
 	color: #46a4e8;
 }
 
 .mushroom {
 	display: inline-block;
-	margin-top: 40px;
-	width: 128px;
+	margin-top: 30px;
+	width: 100px;
 	animation: 4s bounce infinite;
 }
 
@@ -88,8 +92,8 @@ h4 {
 
 main {
     position: relative;
-	margin: 20px 0 40px;
-	padding: 60px 20px 70px;
+	margin: 20px 0;
+	padding: 40px 20px;
 	background-color: #253137;
 }
 
@@ -122,12 +126,12 @@ p {
 
 form {
 	position: relative;
-	max-width: 600px;
+	max-width: 560px;
 	margin: 40px auto;
-	padding: 40px 90px;
+	padding: 40px 80px;
 	border: 2px solid rgba(255, 255, 255, 0.25);
 	background-color: #37474f;
-	box-shadow: 4px 4px 0 #000;
+	box-shadow: 3px 3px 0 #000;
 }
 
 .bolt {
@@ -171,7 +175,7 @@ form {
 
 .input-row, .checkbox-row {
 	position: relative;
-	margin-bottom: 16px;
+	margin-bottom: 12px;
 }
 
 .input-row::after, .checkbox-row::after {
@@ -187,8 +191,8 @@ input:focus {
 
 .input-row input {
 	width: 100%;
-	margin: 4px 0 0;
-	padding: 8px 12px;
+	margin: 2px 0 0;
+	padding: 6px 10px;
 	border: none;
 	border-radius: 4px;
 	font-size: inherit;
@@ -199,7 +203,7 @@ input:focus {
 .input-row.focused::before {
 	content: url(images/cursor.png);
 	position: absolute;
-	top: 42px;
+	top: 32px;
 	left: -76px;
 }
 
@@ -213,18 +217,18 @@ input:focus {
 	clear: left;
 	float: left;
 	position: relative;
-	margin: 6px 0 0 20px;
+	margin: 4px 0 0 20px;
 	cursor: pointer;
 }
 
 .checkbox-row input + label::before {
 	content: '';
 	display: inline-block;
-	width: 24px;
-	height: 24px;
+	width: 22px;
+	height: 22px;
 	margin-right: 10px;
 	background-color: #fff;
-	vertical-align: -2px;
+	vertical-align: -4px;
 }
 
 .checkbox-row input:checked + label::before {
@@ -240,24 +244,23 @@ input:focus {
 }
 
 .submit-row {
-	margin-top: 60px;
+	margin-top: 40px;
 	text-align: center;
 }
 
 .submit-row input {
-	width: 300px;
-	padding: 10px 40px;
+	padding: 8px 40px;
 	border: none;
 	color: #fff;
 	background-color: #46a4e8;
-	font-size: 32px;
+	font-size: 28px;
 	font-family: inherit;
 	cursor: pointer;
-	box-shadow: 4px 4px 0 #000;
+	box-shadow: 3px 3px 0 #000;
 	text-transform: uppercase;
 }
 
 .submit-row input:hover, .submit-row input:focus {
-	padding: 6px 36px;
+	padding: 4px 36px;
 	border: 4px solid #fff;
 }

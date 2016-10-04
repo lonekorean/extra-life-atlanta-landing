@@ -11,4 +11,4 @@ $(function() {
 	function blurInput() {
 		$(this).closest('.input-row').removeClass('focused');
 	}
-})
+});
